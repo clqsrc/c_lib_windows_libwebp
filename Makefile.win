@@ -1,0 +1,151 @@
+# Project: gcc_t1
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 27/12/16 09:12
+
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/main_t1.o Objects/MingW/alpha.o Objects/MingW/buffer.o Objects/MingW/frame.o Objects/MingW/idec.o Objects/MingW/io.o Objects/MingW/quant.o Objects/MingW/tree.o Objects/MingW/vp8.o Objects/MingW/vp8l.o Objects/MingW/webp.o Objects/MingW/alpha_processing.o Objects/MingW/alpha_processing_mips_dsp_r2.o Objects/MingW/alpha_processing_sse2.o Objects/MingW/alpha_processing_sse41.o Objects/MingW/argb.o Objects/MingW/argb_mips_dsp_r2.o Objects/MingW/argb_sse2.o Objects/MingW/cost.o Objects/MingW/cost_mips_dsp_r2.o Objects/MingW/cost_mips32.o Objects/MingW/cost_sse2.o Objects/MingW/cpu.o Objects/MingW/dec.o Objects/MingW/dec_clip_tables.o Objects/MingW/dec_mips_dsp_r2.o Objects/MingW/dec_mips32.o Objects/MingW/dec_msa.o Objects/MingW/dec_neon.o Objects/MingW/dec_sse2.o Objects/MingW/dec_sse41.o Objects/MingW/enc.o Objects/MingW/enc_avx2.o Objects/MingW/enc_mips_dsp_r2.o Objects/MingW/enc_mips32.o Objects/MingW/enc_neon.o Objects/MingW/enc_sse2.o Objects/MingW/enc_sse41.o
+LINKOBJ   = "Objects/MingW/main_t1.o" "Objects/MingW/alpha.o" "Objects/MingW/buffer.o" "Objects/MingW/frame.o" "Objects/MingW/idec.o" "Objects/MingW/io.o" "Objects/MingW/quant.o" "Objects/MingW/tree.o" "Objects/MingW/vp8.o" "Objects/MingW/vp8l.o" "Objects/MingW/webp.o" "Objects/MingW/alpha_processing.o" "Objects/MingW/alpha_processing_mips_dsp_r2.o" "Objects/MingW/alpha_processing_sse2.o" "Objects/MingW/alpha_processing_sse41.o" "Objects/MingW/argb.o" "Objects/MingW/argb_mips_dsp_r2.o" "Objects/MingW/argb_sse2.o" "Objects/MingW/cost.o" "Objects/MingW/cost_mips_dsp_r2.o" "Objects/MingW/cost_mips32.o" "Objects/MingW/cost_sse2.o" "Objects/MingW/cpu.o" "Objects/MingW/dec.o" "Objects/MingW/dec_clip_tables.o" "Objects/MingW/dec_mips_dsp_r2.o" "Objects/MingW/dec_mips32.o" "Objects/MingW/dec_msa.o" "Objects/MingW/dec_neon.o" "Objects/MingW/dec_sse2.o" "Objects/MingW/dec_sse41.o" "Objects/MingW/enc.o" "Objects/MingW/enc_avx2.o" "Objects/MingW/enc_mips_dsp_r2.o" "Objects/MingW/enc_mips32.o" "Objects/MingW/enc_neon.o" "Objects/MingW/enc_sse2.o" "Objects/MingW/enc_sse41.o"
+LIBS      = -L"C:/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Dev-Cpp/lib" -L"C:/Dev-Cpp/MinGW32/lib"  -g3 
+INCS      = -I"C:/Dev-Cpp/MinGW32/include" -I"D:/test3/gd_test1/libs/libwebp-0.5.1/src"
+CXXINCS   = -I"C:/Dev-Cpp/MinGW32/include" -I"C:/Dev-Cpp/" -I"C:/Dev-Cpp/include/common" -I"D:/test3/gd_test1/libs/libwebp-0.5.1/src"
+RCINCS    = --include-dir "C:/Dev-Cpp/include/common"
+BIN       = Output/MingW/gcc_t1.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)   -g3
+CFLAGS    = $(INCS) $(DEFINES)   -g3
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/main_t1.o: $(GLOBALDEPS) main_t1.c
+	$(CC) -c main_t1.c -o Objects/MingW/main_t1.o $(CFLAGS)
+
+Objects/MingW/alpha.o: $(GLOBALDEPS) src/dec/alpha.c
+	$(CPP) -c src/dec/alpha.c -o Objects/MingW/alpha.o $(CXXFLAGS)
+
+Objects/MingW/buffer.o: $(GLOBALDEPS) src/dec/buffer.c
+	$(CPP) -c src/dec/buffer.c -o Objects/MingW/buffer.o $(CXXFLAGS)
+
+Objects/MingW/frame.o: $(GLOBALDEPS) src/dec/frame.c
+	$(CPP) -c src/dec/frame.c -o Objects/MingW/frame.o $(CXXFLAGS)
+
+Objects/MingW/idec.o: $(GLOBALDEPS) src/dec/idec.c
+	$(CPP) -c src/dec/idec.c -o Objects/MingW/idec.o $(CXXFLAGS)
+
+Objects/MingW/io.o: $(GLOBALDEPS) src/dec/io.c
+	$(CPP) -c src/dec/io.c -o Objects/MingW/io.o $(CXXFLAGS)
+
+Objects/MingW/quant.o: $(GLOBALDEPS) src/dec/quant.c
+	$(CPP) -c src/dec/quant.c -o Objects/MingW/quant.o $(CXXFLAGS)
+
+Objects/MingW/tree.o: $(GLOBALDEPS) src/dec/tree.c
+	$(CPP) -c src/dec/tree.c -o Objects/MingW/tree.o $(CXXFLAGS)
+
+Objects/MingW/vp8.o: $(GLOBALDEPS) src/dec/vp8.c
+	$(CPP) -c src/dec/vp8.c -o Objects/MingW/vp8.o $(CXXFLAGS)
+
+Objects/MingW/vp8l.o: $(GLOBALDEPS) src/dec/vp8l.c
+	$(CPP) -c src/dec/vp8l.c -o Objects/MingW/vp8l.o $(CXXFLAGS)
+
+Objects/MingW/webp.o: $(GLOBALDEPS) src/dec/webp.c
+	$(CPP) -c src/dec/webp.c -o Objects/MingW/webp.o $(CXXFLAGS)
+
+Objects/MingW/alpha_processing.o: $(GLOBALDEPS) src/dsp/alpha_processing.c
+	$(CPP) -c src/dsp/alpha_processing.c -o Objects/MingW/alpha_processing.o $(CXXFLAGS)
+
+Objects/MingW/alpha_processing_mips_dsp_r2.o: $(GLOBALDEPS) src/dsp/alpha_processing_mips_dsp_r2.c
+	$(CPP) -c src/dsp/alpha_processing_mips_dsp_r2.c -o Objects/MingW/alpha_processing_mips_dsp_r2.o $(CXXFLAGS)
+
+Objects/MingW/alpha_processing_sse2.o: $(GLOBALDEPS) src/dsp/alpha_processing_sse2.c
+	$(CPP) -c src/dsp/alpha_processing_sse2.c -o Objects/MingW/alpha_processing_sse2.o $(CXXFLAGS)
+
+Objects/MingW/alpha_processing_sse41.o: $(GLOBALDEPS) src/dsp/alpha_processing_sse41.c
+	$(CPP) -c src/dsp/alpha_processing_sse41.c -o Objects/MingW/alpha_processing_sse41.o $(CXXFLAGS)
+
+Objects/MingW/argb.o: $(GLOBALDEPS) src/dsp/argb.c
+	$(CPP) -c src/dsp/argb.c -o Objects/MingW/argb.o $(CXXFLAGS)
+
+Objects/MingW/argb_mips_dsp_r2.o: $(GLOBALDEPS) src/dsp/argb_mips_dsp_r2.c
+	$(CPP) -c src/dsp/argb_mips_dsp_r2.c -o Objects/MingW/argb_mips_dsp_r2.o $(CXXFLAGS)
+
+Objects/MingW/argb_sse2.o: $(GLOBALDEPS) src/dsp/argb_sse2.c
+	$(CPP) -c src/dsp/argb_sse2.c -o Objects/MingW/argb_sse2.o $(CXXFLAGS)
+
+Objects/MingW/cost.o: $(GLOBALDEPS) src/dsp/cost.c
+	$(CPP) -c src/dsp/cost.c -o Objects/MingW/cost.o $(CXXFLAGS)
+
+Objects/MingW/cost_mips_dsp_r2.o: $(GLOBALDEPS) src/dsp/cost_mips_dsp_r2.c
+	$(CPP) -c src/dsp/cost_mips_dsp_r2.c -o Objects/MingW/cost_mips_dsp_r2.o $(CXXFLAGS)
+
+Objects/MingW/cost_mips32.o: $(GLOBALDEPS) src/dsp/cost_mips32.c
+	$(CPP) -c src/dsp/cost_mips32.c -o Objects/MingW/cost_mips32.o $(CXXFLAGS)
+
+Objects/MingW/cost_sse2.o: $(GLOBALDEPS) src/dsp/cost_sse2.c
+	$(CPP) -c src/dsp/cost_sse2.c -o Objects/MingW/cost_sse2.o $(CXXFLAGS)
+
+Objects/MingW/cpu.o: $(GLOBALDEPS) src/dsp/cpu.c
+	$(CPP) -c src/dsp/cpu.c -o Objects/MingW/cpu.o $(CXXFLAGS)
+
+Objects/MingW/dec.o: $(GLOBALDEPS) src/dsp/dec.c
+	$(CPP) -c src/dsp/dec.c -o Objects/MingW/dec.o $(CXXFLAGS)
+
+Objects/MingW/dec_clip_tables.o: $(GLOBALDEPS) src/dsp/dec_clip_tables.c
+	$(CPP) -c src/dsp/dec_clip_tables.c -o Objects/MingW/dec_clip_tables.o $(CXXFLAGS)
+
+Objects/MingW/dec_mips_dsp_r2.o: $(GLOBALDEPS) src/dsp/dec_mips_dsp_r2.c
+	$(CPP) -c src/dsp/dec_mips_dsp_r2.c -o Objects/MingW/dec_mips_dsp_r2.o $(CXXFLAGS)
+
+Objects/MingW/dec_mips32.o: $(GLOBALDEPS) src/dsp/dec_mips32.c
+	$(CPP) -c src/dsp/dec_mips32.c -o Objects/MingW/dec_mips32.o $(CXXFLAGS)
+
+Objects/MingW/dec_msa.o: $(GLOBALDEPS) src/dsp/dec_msa.c
+	$(CPP) -c src/dsp/dec_msa.c -o Objects/MingW/dec_msa.o $(CXXFLAGS)
+
+Objects/MingW/dec_neon.o: $(GLOBALDEPS) src/dsp/dec_neon.c
+	$(CPP) -c src/dsp/dec_neon.c -o Objects/MingW/dec_neon.o $(CXXFLAGS)
+
+Objects/MingW/dec_sse2.o: $(GLOBALDEPS) src/dsp/dec_sse2.c
+	$(CPP) -c src/dsp/dec_sse2.c -o Objects/MingW/dec_sse2.o $(CXXFLAGS)
+
+Objects/MingW/dec_sse41.o: $(GLOBALDEPS) src/dsp/dec_sse41.c
+	$(CPP) -c src/dsp/dec_sse41.c -o Objects/MingW/dec_sse41.o $(CXXFLAGS)
+
+Objects/MingW/enc.o: $(GLOBALDEPS) src/dsp/enc.c
+	$(CPP) -c src/dsp/enc.c -o Objects/MingW/enc.o $(CXXFLAGS)
+
+Objects/MingW/enc_avx2.o: $(GLOBALDEPS) src/dsp/enc_avx2.c
+	$(CPP) -c src/dsp/enc_avx2.c -o Objects/MingW/enc_avx2.o $(CXXFLAGS)
+
+Objects/MingW/enc_mips_dsp_r2.o: $(GLOBALDEPS) src/dsp/enc_mips_dsp_r2.c
+	$(CPP) -c src/dsp/enc_mips_dsp_r2.c -o Objects/MingW/enc_mips_dsp_r2.o $(CXXFLAGS)
+
+Objects/MingW/enc_mips32.o: $(GLOBALDEPS) src/dsp/enc_mips32.c
+	$(CPP) -c src/dsp/enc_mips32.c -o Objects/MingW/enc_mips32.o $(CXXFLAGS)
+
+Objects/MingW/enc_neon.o: $(GLOBALDEPS) src/dsp/enc_neon.c
+	$(CPP) -c src/dsp/enc_neon.c -o Objects/MingW/enc_neon.o $(CXXFLAGS)
+
+Objects/MingW/enc_sse2.o: $(GLOBALDEPS) src/dsp/enc_sse2.c
+	$(CPP) -c src/dsp/enc_sse2.c -o Objects/MingW/enc_sse2.o $(CXXFLAGS)
+
+Objects/MingW/enc_sse41.o: $(GLOBALDEPS) src/dsp/enc_sse41.c
+	$(CPP) -c src/dsp/enc_sse41.c -o Objects/MingW/enc_sse41.o $(CXXFLAGS)

@@ -1,0 +1,45 @@
+libwebp的编译
+
+
+libwebp作为google非常新的项目代码,用了很多C99特性,几番努力下我放弃了用VC6编译的努力.
+还是按官方方法编译吧,好在其编译 makefile 写得还是很不错的,在 vs2010 环境下使用不同的
+参数就可以编译出动态库,其官网上的二进制预编译好的文件目前是没有动态库版本的,只能自己
+编译.
+
+ps. libwebp 似乎用得非常少,php 的 gd 库用的 libvpx. 不过 libvpx 更加难编译,而且 gd 库
+中的实现非常繁杂不算,还被人说兼容性差,从 python 的 webp 接口来看,其实可以用 libwebp 代替,
+而且我已经在 windows 版本上实现了一个非常简单又好用的 webp 解码版本. 当然用 php 调用 libwebp
+直接写应该也是可以的(我看有人直接用 php 写有 bmp 的相关代码,道理是一样的),就是限制太多了.
+
+简单的解码可以参考
+https://developers.google.com/speed/webp/docs/api
+
+--------------------------------------------------
+参考
+
+https://github.com/webmproject/libwebp/
+
+Building:
+=========
+
+Windows build:
+--------------
+
+By running:
+
+  nmake /f Makefile.vc CFG=release-static RTLIBCFG=static OBJDIR=output
+
+
+--------------------------------------------------
+clq:
+先执行 vcvars32.bat[vs2010]
+
+>nmake /f Makefile.vc CFG=release-dynamic RTLIBCFG=static OBJDIR=output
+
+这个命令会生成 dll.
+
+
+--------------------------------------------------
+--------------------------------------------------
+libwebp-0.5.1.zip  是编译时下载的原始源码.
+libwebp-0.5.2-windows-x86.zip 是后来从 google 官方下载的编译二进制文件,不过只有静态库.
