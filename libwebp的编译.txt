@@ -43,3 +43,18 @@ clq:
 --------------------------------------------------
 libwebp-0.5.1.zip  是编译时下载的原始源码.
 libwebp-0.5.2-windows-x86.zip 是后来从 google 官方下载的编译二进制文件,不过只有静态库.
+
+--------------------------------------------------
+编译出来的 dll 和 lib 可以在 vc6 中使用,但是需要修改文件
+libwebp-0.5.1_vc6_2\src\webp\types.h
+因为大部分内容是一样的,没有上传上来.在 gd 库源码中有.主要修改的内容如下,原因是 vc6 不支持某些类型
+
+//clq//typedef unsigned long long int uint64_t;
+//clq//typedef long long int int64_t;
+typedef unsigned __int64 uint64_t;//clq//
+typedef __int64 int64_t;//clq//
+
+//clq test
+#define  uintptr_t unsigned int *;
+#define ULL
+
